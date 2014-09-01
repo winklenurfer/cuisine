@@ -1,5 +1,20 @@
 <div class="jumbotron text-center">
 	<h1>Ingredients</h1>
-
-	<p>{{ tagline }}</p>
 </div>
+<table class='table table-striped'>
+    <thead>
+		<th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>&nbsp;<a href="" ng-click="predicate = '-name'; reverse=false">(^)</a></th>
+		<th><a href="" ng-click="predicate = 'category'; reverse=false">Category</a>&nbsp;<a href="" ng-click="predicate = '-category'; reverse=false">(^)</a></th>
+		<th><a href="" ng-click="predicate = 'inPantry'; reverse=true">In Pantry</a>&nbsp;<a href="" ng-click="predicate = '-inPantry'; reverse=true">(^)</a></th>
+		<th><a href="" ng-click="predicate = '_id'; reverse=true">ID</a>&nbsp;<a href="" ng-click="predicate = '-_id'; reverse=true">(^)</a></th>
+    </thead>
+    <tbody>
+		<tr ng-repeat='ingredient in ingredients | orderBy:predicate:reverse'>
+			<td>{{ingredient.name}}</td>
+			<td>{{ingredient.category}}</td>
+			<td>{{ingredient.inPantry}}</td>
+			<td>{{ingredient._id}}</td>
+		</tr>
+    </tbody>
+</table>
+<p>{{ ingredients }}</p>
