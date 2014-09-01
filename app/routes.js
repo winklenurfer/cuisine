@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
-	var Ingredient = require('./app/models/ingredient');
-	
+	var Ingredient = require('./models/ingredient');
+
 	// server routes ===========================================================
 	// handle things like api calls
 	// authentication routes
