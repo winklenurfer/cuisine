@@ -22,8 +22,8 @@ module.exports = function(app) {
 	app.post('/api/ingredients', function(req, res) {
 		Ingredient.create({
 			name : req.body.name,
-			inPantry: res.body.inPantry,
-			category: res.body.category
+			inPantry : req.body.inPantry,
+			category : req.body.category
 		}, function(err, ingredients) {
 			if (err)
 				res.send(err);
