@@ -13,8 +13,9 @@ module.exports = function(app) {
 	// sample api route
 	app.get('/api/ingredients', function(req, res) {
 		// use mongoose to get all ingredients in the database
+		console.log('routed to /api/ingredients');
 		Ingredient.find(function(err, ingredients) {
-
+			console.log('finding ' + ingredients);
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err);
